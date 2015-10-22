@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-12">{{ dow }}</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        {{ reverse_string }}
+    </div>
+    <div class="col-md-12">
+        <form action="">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Eye color?" name="eye_color">
+            </div>
+            <div class="btn-group" role="group">
+                <input type="submit" class="btn btn-success" value="Send!">
+            </div>
+        </form>
+    </div>
+</div>
+    <br/>
+<div class="row">
+    {% for person in panels %}
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ person.name }}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ person.eye_color }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

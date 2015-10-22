@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Name:</h1>
+            <h3>{{ name }}</h3>
+        </div>
+    </div>
+    <br/>
+    <form action="">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon2">First Name</span>
+            <input type="text" class="form-control" aria-describedby="basic-addon1" name="first_name">
+        </div>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Last Name</span>
+            <input type="text" class="form-control" aria-describedby="basic-addon1" name="last_name">
+        </div>
+        <br/>
+        <select label="Prefix" name="prefix">
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Queen">Queen</option>
+        </select>
+        <br/>
+        <br/>
+        <div class="btn-group" role="group">
+            <input type="submit" class="btn btn-success" value="Submit">
+        </div>
+    </form>
+{% endblock %}
