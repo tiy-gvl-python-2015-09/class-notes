@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1>LIST VIEW!</h1>
+    {% for tweet in object_list %}
+        <div>
+            <a href="{% url 'tweet_detail' tweet.id %}">
+                {{ tweet.body }} ( {{ tweet.favorites }} )
+            </a>
+        <blockquote>
+            {% for user in tweet.favorites_users %}
+                <div>{{ user.username }}</div>
+            {% endfor %}
+        </blockquote>
+        </div>
+    {% endfor %}
+{% endblock %}
