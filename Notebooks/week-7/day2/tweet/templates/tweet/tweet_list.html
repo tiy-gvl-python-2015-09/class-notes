@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1>LIST VIEW!</h1>
+    {% for tweet in object_list %}
+        <div>
+            <a href="{% url 'tweet_detail' tweet.id %}">
+                {{ tweet.body }} ( {{ tweet.favorites }} )
+            </a>
+        {% comment %}
+        <blockquote>
+            {% for user in tweet.favorites_users %}
+                <div>{{ user.username }}</div>
+            {% endfor %}
+        </blockquote>
+        {% endcomment %}
+            {% if request.user.id %}
+                {% if request.user not in tweet.favorites_users %}
+                    <form action="{% url 'favorite_tweet' tweet.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="+"/>
+                    </form>
+                {% else %}
+                    <form action="{% url 'unfavorite_tweet' tweet.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="-"/>
+                    </form>
+                {% endif %}
+            {% endif %}
+        </div>
+
+    {% endfor %}
+{% endblock %}
