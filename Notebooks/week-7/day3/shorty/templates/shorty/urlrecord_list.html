@@ -1,12 +1,11 @@
-<html>
+{% extends "base.html" %}
 
-<body>
-<ul>
-    {% for url in object_list %}
-        <li>
-            <a href="{% url 'url_redirect' url.short_url %}">{{ url.long_url }} ({{ url.hits }})</a>
-        </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+{% block content %}
+    <ul>
+        {% for url in object_list %}
+            <li>
+                <a href="{% url 'url_redirect' url.short_url %}">{{ url.long_url }} ({{ url.hits }})</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
