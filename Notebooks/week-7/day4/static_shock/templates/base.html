@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}"/>
+    <title></title>
+</head>
+<body>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4" style="background: yellowgreen;border: 5px solid black">
+            <div class="row">
+                <div class="col-xs-6" style="background: white;border: 1px black solid">
+                    <div class="row">
+                        <div class="col-xs-6">X</div>
+                        <div class="col-xs-6">Y</div>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="background: white;border: 1px black solid">X</div>
+            </div>
+        </div>
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4" style="background: yellowgreen;border: 5px solid black">Joel</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 col-md-7 col-sm-8">
+            <br/><br/>
+            <div class="panel panel-primary">
+                  <div class="panel-heading">Order #1 Details</div>
+                  <div class="panel-body">
+                      <ul>
+                          <li>Chef Salad</li>
+                          <li>16oz Steak</li>
+                      </ul>
+                  </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-5 col-sm-4">
+            <br/><br/>
+
+            <form action="" method="post">
+                <button type="submit" class="btn btn-danger super-big-button">ORDER UP!</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
